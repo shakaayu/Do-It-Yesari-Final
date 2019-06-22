@@ -1,0 +1,805 @@
+<html>
+
+<head>
+    <title> add listing </title>
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+
+
+        .header-wrapper {
+            /*http://nepalhomesearch.com/images/listing_photos/6382_sunrise4.jpg*/
+            /* background: url("https://mediastream.jumeirah.com/webimage/heroactual//globalassets/global/hotels-and-resorts/london/grosvenor-house-suites-jumeirah-living/rooms/grosvenor-penthouse/grosvenor-house-apartments-jumeirah-living-rooms-grosvenor-penthouse-4-hero.jpg
+      "); */
+            background: url("http://cdn.crownmediadev.com/dims4/default/52f5d5c/2147483647/thumbnail/726x410%3E/quality/90/?url=http%3A%2F%2Fcdn.crownmediadev.com%2Fa8%2F80%2F54db75704630b24642da025ae8df%2Fhome-family-diy-unicorn-rug.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0px -200px;
+
+            width: 100%;
+            height: 220px;
+
+        }
+
+        .header-wrapper::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 220px;
+            content: "";
+            opacity: 0.4;
+            background: linear-gradient(to right, #555555 100%, #dddddd);
+        }
+
+        .nav-wrapper {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            background-color: transparent;
+            color: #fff;
+            transition: all 0.25s ease;
+            position: fixed;
+            z-index: 10;
+            padding-top: 3px;
+            border-bottom: 1px solid #a89f9ffa
+            /* make sure to add vendor prefixes here */
+        }
+
+        .logo {
+            padding-top: 5px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            float: left;
+        }
+
+        .navbar-menu {
+            float: right;
+            color: white;
+            display: block;
+            margin-top: 5px;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 1px;
+
+        }
+
+
+        .nav-menu {
+            float: right;
+        }
+
+        .nav-wrapper.past-main {
+            background-color: #fff;
+            color: black;
+            position: fixed;
+            border-bottom: 1px solid #dcdcdc
+        }
+
+        .list-button {
+            float: left;
+            margin-top: 13px;
+        }
+
+        .register {
+            float: right;
+            padding-bottom: 7px;
+            margin-top: 9px;
+        }
+
+        .register li {
+            display: inline;
+            list-style: none;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .nav-menu .register button {
+            border: none;
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+
+        }
+
+        .nav-menu .register button:hover {
+            color: orange;
+            border-bottom: 1px solid #df6e21
+        }
+
+        .navbar-menu button {
+            border: none;
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+
+        }
+
+        .nav-menu.past-main button {
+            color: #000000;
+        }
+
+        .navbar-menu button:hover {
+            color: orange;
+            border-bottom: 1px solid #df6e21
+        }
+
+        .navbar-menu.past-main button {
+            color: black;
+        }
+
+        .wish-list {
+            border-radius: 50%;
+            border: 2px solid orange;
+            padding: 4px;
+
+            cursor: pointer;
+            color: white;
+        }
+
+        .wish-list {
+            border-radius: 50%;
+            border: 2px solid orange;
+            padding: 4px;
+
+            cursor: pointer;
+            color: white;
+        }
+
+        .wish-list.past-main {
+
+            color: black;
+        }
+
+        .wish-list:hover {
+            background: orange;
+            color: white;
+        }
+
+
+
+        .nav-button {
+
+            background-color: transparent;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid orange;
+            font-size: 15px;
+            margin: 5px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            letter-spacing: 1px
+        }
+
+        .nav-button.past-main {
+            color: black;
+
+        }
+
+
+
+        .nav-button:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        .banner-text {
+            padding-top: 100px;
+            text-align: center;
+            font-size: 42px;
+            color: white;
+            position: absolute;
+            left: 37.5%;
+            z-index: 1;
+            padding-bottom: 30px;
+        }
+
+
+
+        hr {
+            border-color: #dcdcdc;
+            border-style: solid;
+            margin: 30px;
+
+
+
+        }
+
+        /****************************************************************************/
+
+        /**********************************************************************************/
+
+        .footer-wrapper li {
+
+            text-decoration: none;
+            display: inline;
+            padding: 0px 80px;
+        }
+
+        .first-block a {
+            color: black
+        }
+
+        a {
+            text-decoration: none
+        }
+
+
+        .clearfix:after {
+            content: " ";
+            /* Older browser do not support empty content */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+
+        /*search bar*/
+
+        /* input {
+      margin: 10px;
+      width: 300px;
+      border: 2px solid #d2d2d2;
+      border-radius: 4px;
+      margin: 8px 0;
+      outline: none;
+      padding: 8px;
+      box-sizing: border-box;
+      transition: 0.3s;
+      
+    } */
+
+        input {
+            width: 290px;
+            padding-top: 10px;
+
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border: 1px solid #aaaaaa;
+            border-radius: 4px;
+            background: white;
+            padding: 8px;
+            margin: 0px;
+            transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+            height: 40px;
+        }
+
+        input:focus {
+            border-color: #9b918b;
+            box-shadow: 0 0 8px 0 #9b918b;
+        }
+
+        select:focus {
+            border-color: #9b918b;
+            box-shadow: 0 0 8px 0 #9b918b;
+
+        }
+
+        .footer-wrapper li {
+
+            text-decoration: none;
+            display: inline;
+            padding: 0px 80px;
+            ;
+        }
+
+        .product-image input[type=text] {
+            margin: 10px;
+            width: 150px;
+            border: 2px solid #d2d2d2;
+            border-radius: 4px;
+            margin: 8px 0;
+            outline: none;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+
+        /*************/
+
+        /* form */
+
+        .personal-form {
+
+            overflow-x: hidden;
+            border-radius: 8px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+
+
+
+        .first {
+            padding-top: 100px;
+            padding-left: 40px;
+        }
+
+        .send {
+            text-align: center;
+            padding: 30px;
+
+        }
+
+        .send button {
+            border: 1px solid #2096ba;
+            color: #2096ba;
+            font-size: 25px;
+            height: 50px;
+            width: 100px;
+            background: none;
+
+        }
+
+        .send button:hover {
+            background: #2096ba;
+            color: white;
+        }
+
+        .property-form {
+
+
+            padding-top: 30px;
+            display: block;
+            list-style: none;
+            padding-left: 180px;
+        }
+
+        .property-form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .property-form input[type=text],
+        .property-form input[type=date],
+        .property-form input[type=datetime],
+        .property-form input[type=number],
+        .property-form input[type=search],
+        .property-form input[type=time],
+        .property-form input[type=url],
+        .property-form input[type=email],
+        textarea,
+        select {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border: 1px solid #aaaaaa;
+            border-radius: 4px;
+            background: white;
+            padding: 7px;
+            margin: 0px;
+            transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+            height: 40px;
+        }
+
+        .property-form .field-divided {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .property-form .field-long {
+            width: 77.3%;
+
+        }
+
+        .property-form .field-select {
+            width: 100%;
+        }
+
+        .property-form .field-textarea {
+            height: 100px;
+        }
+
+
+        .property-form input[type=submit],
+        .property-form input[type=button] {
+            background: none;
+            font-size: 18px;
+            width: auto;
+            padding: 8px 20px;
+            border: 1px solid #2096ba;
+            color: #2096ba;
+            height: 43px;
+            cursor: pointer;
+        }
+
+        .property-form input[type=button]:hover {
+            background: #2096ba;
+            box-shadow: none;
+            color: black;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            height: 43px;
+        }
+
+        .property-form .required {
+            color: none;
+        }
+
+        .one {
+            display: flex;
+        }
+
+
+
+        .container {
+            box-shadow: 0px 0px 15px 0px #D6D6D6;
+            margin: 20px;
+            margin-right: 120px;
+            margin-left: 120px;
+        }
+
+        .body-wrapper {
+            width: 100%;
+        }
+
+
+        .uploader {
+            position: relative;
+            margin-left: 20px;
+
+            overflow: hidden;
+            width: 76.59%;
+            height: 150px;
+            background: #fafafa;
+            border: 2px dashed #dcdcdc;
+            /*   background: url('https://d30y9cdsu7xlg0.cloudfront.net/png/26537-200.png') repeat-x;
+*/
+            /* padding:0px 20px;
+    background-repeat: space;
+    background-size: 180px 150px;
+    background-clip:content-box;
+    background-position: 10px;*/
+        }
+
+
+        #myimage {
+            margin: 0 auto;
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            top: -50px;
+            left: 0;
+            z-index: 2;
+            opacity: 0;
+            cursor: pointer;
+            padding: 10px;
+
+        }
+
+        .uploader img {
+            height: 127px;
+            width: 117px;
+            /* object-fit: cover; */
+            margin: 9px;
+            border: 1px solid #dddddd;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+
+    <!--  <link rel="stylesheet" href="./css/all.css">
+
+
+<script src="./js/jquery.js"></script>
+
+<script src="./js/bootstrap.js"></script> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./font/flaticon.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="header-wrapper">
+        <nav class="nav-wrapper clearfix">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="./images/logo.png" style="height: 37px; width: 100px">
+
+                </div>
+
+                <ul class="nav-menu">
+                    <button class="btn nav-button" onclick="location.href='diyproducts'"> Browse DIY Deals</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn nav-button" onclick="location.href='material'"> Sell on Yesari</button>&nbsp;&nbsp;&nbsp;
+
+
+                </ul>
+
+
+            </div>
+            <div class="nav-menu">
+
+                <ul class="register">
+
+                    <li>
+                        <span class="wish-list fas fa-shopping-cart" onclick="location.href='cart'"></span>
+                        </a>
+                    </li>
+
+                    <% if(!user) { %>
+                        <li>
+                            <button onclick="location.href='signup'">Register</button>
+                        </li>
+                        <li>
+                            <button onclick="location.href='login'">Login</button>
+                        </li>
+
+
+                        <% }else{ %>
+                            <li>
+                                <button>
+                                    <%= user.username %>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="location.href='signout'">
+                                    Logout </button>
+                            </li>
+                            <%}%>
+
+
+                </ul>
+                <!-- <div class="register">Register</div>
+              <div class="login">Login  </div> -->
+            </div>
+        </nav>
+
+
+        <div class="banner-text">
+            Add Your
+            <span style="color: orange">Listing</span>
+
+
+        </div>
+
+    </div>
+    <div class="title-header" style="text-align: center; padding-top: 25px; padding-bottom: 10px;">
+
+
+        <span style="border-bottom: 1px solid orange; font-size: 24px">Post your Items here </span>
+
+    </div>
+
+    <div class="container">
+
+        <div class="body-wrapper">
+
+
+
+
+
+
+            <div style="text-align: center; padding-bottom: 10px; padding-top:30px;">
+                <h2>
+                    <span style="color: orange">Your</span>
+                    Listing
+                </h2>
+            </div>
+
+            <form role="form" action="/materialSave/<%= user._id %>" method="POST" enctype="multipart/form-data" id="login-form" autocomplete="off">
+
+
+
+                <ul class="property-form">
+                    <div class="one">
+                        <li>
+                            <label style="padding-left: 20px">Choose your Product Type
+                                <span class="required" style="color: red">*</span>
+                            </label>
+                            <select name="productType" id='productType' class="field-divided" style="margin-right:80px; margin-left:20px;">
+                                <option value="accessories" selected="selected">Accessories</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="art">Art and Craft</option>
+                                <option value="home">Home Decor</option>
+                                <option value="home">Diy Materials</option>
+                            </select>
+                        </li>
+
+                    </div>
+                    <div class="two">
+                        <li style="margin-bottom:30px;">
+                            <label style="padding-left: 20px">
+                                Name
+                                <span class="required" style="color: red">*</span>
+
+                            </label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Product Name" style="width:70%;  margin-left:20px;">
+
+                        </li>
+
+                        <li>
+                            <label style="padding-left: 20px">Price
+                                <span class="required" style="color: red">*</span>
+                            </label>
+                            <input type="number" name="price" id='price' class="field-divided" placeholder="Price" style="margin-bottom:25px; margin-left:20px;"
+                            />
+                        </li>
+                        <li>
+                            <label style="padding-left: 20px">Quantity
+                                <span class="required" style="color: red">*</span>
+                            </label>
+                            <input type="number" name="quantity" id='quantity' class="field-divided" placeholder="Quantity" style="margin-bottom:25px; margin-left:20px;"
+                            />
+                        </li>
+
+                        <li>
+                            <label style="padding-left: 20px">Description
+                                <span class="required" style="color: red">*</span>
+                            </label>
+                            <textarea name="description" id="description" class="field-long field-textarea" style="margin-left:20px;"></textarea>
+                        </li>
+                        <li>
+                            <label style="margin-top:25px; padding-left: 20px">Click on the box to add images: (upto 5 images)
+                                <span class="required" style="color: red">*</span>
+                            </label>
+
+                            <div class="uploader">
+                                <img src="https://static.thenounproject.com/png/49665-200.png" class="imgClass">
+                                <img src="https://static.thenounproject.com/png/49665-200.png" class="imgClass">
+                                <img src="https://static.thenounproject.com/png/49665-200.png" class="imgClass">
+                                <img src="https://static.thenounproject.com/png/49665-200.png" class="imgClass">
+                                <img src="https://static.thenounproject.com/png/49665-200.png" class="imgClass">
+
+
+
+                                <input type="file" accept="image/*" name="myimage" id="myimage" value="Upload" multiple>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="margin-top:20px">
+                                <li>
+
+                                    <label style="padding-left: 20px">Preferences (if any)
+
+                                    </label>
+                                    <textarea name="tags" id="tags" class="field-long field-textarea" style="margin-left:20px;"></textarea>
+                                </li>
+                            </div>
+                        </li>
+                        <br/>
+                        <div class="clearfix">
+                            <input type="submit" id="btn-login" value="Upload" style="float: right; margin-right: 190px; width: 100px" />
+                            <span style="padding-bottom: 30px"></span>
+                        </div>
+            </form>
+
+            <br/>
+            </div>
+        </div>
+    </div>
+    </ul>
+
+    </div>
+
+    <div class="footer-wrapper" style="background: #111111; height: 100px; text-align: center; color: white; padding: 20px; margin-top:30px;">
+        The Hipsters Ⓒ 2018
+        <br/>
+        <br/>
+        <li>
+
+            About Us </li>
+
+        <li>Terms Of Use</li>
+
+
+        <li>Privacy Policies</li>
+
+    </div>
+
+    <script type="text/javascript">
+        var a = document.getElementsByClassName('navbar-menu')
+
+        $(window).on('scroll', function () {
+
+            // we round here to reduce a little workload
+            stop = Math.round($(window).scrollTop());
+            if (stop > 40) {
+                $('.nav-wrapper').addClass('past-main');
+                $('.nav-button').addClass('past-main');
+                $('.navbar-menu').addClass('past-main');
+                $('.nav-menu').addClass('past-main');
+                $('.wish-list').addClass('past-main');
+
+            } else {
+
+                $('.nav-wrapper').removeClass('past-main');
+                $('.nav-button').removeClass('past-main');
+                $('.navbar-menu').removeClass('past-main');
+                $('.nav-menu').removeClass('past-main');
+                $('.wish-list').removeClass('past-main');
+
+            }
+
+
+        });
+
+        getfnc = function () {
+            alert('Your post has been submitted. We shall notify you regarding your listing.');
+            location.href = 'mainPage.html'
+        }
+
+
+
+
+
+        myimage.onchange = function (e) {
+            for (let i = 0; i < this.files.length; i++) {
+                let url = URL.createObjectURL(this.files[i]);
+                let img = new Image();
+                img.src = url;
+                var b = document.getElementsByClassName("imgClass")
+                // var ba = document.querySelectorAll(img)
+                //  b[0].appendChild(img);
+                console.log(b, this.files.length)
+                document.getElementsByClassName('uploader')[0].replaceChild(img, b[i])
+                img.onload = function () {
+                    URL.revokeObjectURL(this.src);
+                }
+                console.log(this.files[0].name);
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

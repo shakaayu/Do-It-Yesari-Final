@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <style>
+        html,
+        * {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .head-wrap {
+            margin-top: 0;
+        }
+
+        [am-TopLogo] {
+            max-height: 70px;
+            max-width: 210px;
+            margin: 10px 11px;
+        }
+
+        .title_logo {
+            margin-top: 10px;
+            margin-left: -10px;
+        }
+
+        .topper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .menu-wrap {
+            /*  background-image: linear-gradient(#9f9f9f, #535353 3%, #1f1f1f 17%, #212121 49%, #191919 89%, #000000 100%);*/
+            width: 100%;
+            background-color: #2096BA;
+            /*border-top: 1px inset rgba(255, 255, 255, 0.1);*/
+            /*  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);*/
+            /* border-radius: 10px;*/
+            /* margin-top: 10px;*/
+            border-color: transparent;
+
+
+        }
+
+        .navbar-nav {
+            margin-left: 105px;
+        }
+
+        .navbar-nav>li>a {
+            color: #ffffff;
+            font-weight: 700;
+            text-rendering: optimizeLegibility;
+            /*text-shadow: 0px -1px black, 0px 1px rgba(255, 255, 255, 0.25);*/
+            line-height: 18px;
+        }
+
+        .navbar-nav>li>a:hover {
+            background: transparent !important;
+
+            border-bottom: 4px solid #DF6E21;
+            text-decoration-color: #DF6E21;
+        }
+
+        .navbar .navbar-nav>li.active {
+            color: #DF6E21;
+            background-color: #080808;
+            box-shadow: inset 0px -28px 23px -21px rgba(255, 255, 255, 0.15);
+            border-left: 1px solid #2A2A2A;
+            border-right: 1px solid #272727;
+        }
+
+        .btn.btn-gradient-blue {
+            background-color: #0c5497 !important;
+            background-image: -webkit-linear-gradient(top, #127bde 0%, #072d50 100%);
+            background-image: -o-linear-gradient(top, #127bde 0%, #072d50 100%);
+            background-image: linear-gradient(to bottom, #127bde 0%, #072d50 100%);
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff127bde', endColorstr='#ff072d50', GradientType=0);
+            border-color: #072d50 #072d50 #0c5497;
+            color: #fff !important;
+            text-shadow: 0 -1px 0 rgba(31, 31, 31, 0.29);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar-right {
+            /*    float: right !important;*/
+            margin-top: 15px;
+            color: #ffffff;
+            font-weight: 700;
+            text-rendering: optimizeLegibility;
+            /*text-shadow: 0px -1px black, 0px 1px rgba(255, 255, 255, 0.25);*/
+            line-height: 18px;
+        }
+
+        .navbar-right a {
+            margin-right: 20px;
+            padding-top: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .navbar-right a:hover {
+            background: transparent !important;
+            color: white !important;
+            border-bottom: 4px solid #DF6E21;
+            text-decoration: none !important;
+        }
+
+        .w3-button {}
+
+        /*.w3-button:hover
+{
+    text-decoration: none;
+    background: transparent!important;
+
+    border-bottom: 4px solid #DF6E21 !important;
+text-decoration-color: #DF6E21;
+}*/
+
+        .custom-search-form {
+            margin-top: 35px;
+            margin-left: 70px;
+            width: 75% !important;
+        }
+
+        .searches {
+            border-color: #DF6E21 !important;
+        }
+
+        .input-group-btn .btn {
+            background: #DF6E21 !important;
+            border: 1px solid #DF6E21;
+        }
+    </style>
+</head>
+
+<body>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="container head-wrap">
+        <!-- Topper w/ logo -->
+        <div class="row hidden-xs topper">
+            <div class="col-xs-3 col-sm-3 title_logo">
+                <a href="">
+                    <img am-TopLogo alt="Do it Yesari" src="./images/logo1.png" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-sm-5">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control searches">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <!-- /input-group -->
+            </div>
+            <!--  <div class="col-sm-4 text-right ">
+
+
+            <h4 style="color:#DF6E21">For cool DIY project ideas,<br>browse on</h4>
+            <h4 style="color:#DF6E21"> browse on</h4>
+            <a href="#"><img src="./images/logo1.png" style="max-height: 40px;
+    max-width:100px;
+   "></a>
+
+
+        </div> -->
+        </div>
+        <!-- End Topper -->
+    </div>
+    <!-- Navigation -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="menu-wrap">
+                <div class="container">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Nav_menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="Nav_menu">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+
+                            <li class="sub-menu dropdown">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">DIY Deals
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu gallerys">
+                                    <li>
+                                        <a href="">Clothing</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Art and Craft</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Home Decor</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Accessories</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">DIY Materials</a>
+                            </li>
+                            <li>
+                                <a href="">Sell on Yesari</a>
+                            </li>
+                        </ul>
+                        <ul class=" navbar-right hidden-xs ">
+                            <a href="/register" class="w3-bar-item w3-button" data-toggle="modal" href="#myModal"> REGISTER</a>
+                            <a href="/login" class="w3-bar-item w3-button" data-toggle="modal" href="#mymodal"> LOGIN</a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</body>
+<script>
+    jQuery('ul.nav li.dropdown').hover(function () {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn();
+    }, function () {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut();
+    });
+</script>
+
+</html>

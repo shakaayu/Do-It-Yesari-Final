@@ -1,0 +1,1006 @@
+<!-- 
+shutterblue2096ba
+terracotta df6e21 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>index</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        html * {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        span {
+            font-family: 'open-sans', sans-serif
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .header-wrapper {
+            /*http://nepalhomesearch.com/images/listing_photos/6382_sunrise4.jpg*/
+            background: url("https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39453180_531720783922985_5069595794936430592_n.jpg?_nc_cat=0&oh=7428a71b6fd482f14d935e7289e8b759&oe=5C016E1A");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+        }
+
+
+        .header-wrapper::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 500px;
+            content: "";
+            opacity: 0.4;
+            background: linear-gradient(to right, #555555 100%, #dddddd);
+        }
+
+
+
+        .nav-wrapper {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            background-color: transparent;
+            color: #fff;
+            transition: all 0.25s ease;
+            position: fixed;
+            z-index: 10;
+            padding-top: 3px;
+            border-bottom: 1px solid #a89f9ffa
+            /* make sure to add vendor prefixes here */
+        }
+
+        .logo {
+            padding-top: 5px;
+            float: left;
+        }
+
+        .logo-img {
+            float: left;
+        }
+
+        .navbar-menu {
+            float: right;
+            margin-top: 5px;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 1px;
+
+        }
+
+        .navbar-menu button {
+            border: 1px solid orange;
+        }
+
+        .nav-menu {
+            float: right;
+        }
+
+        .nav-wrapper.past-main {
+            background-color: #fff;
+            color: black;
+            position: fixed;
+            border-bottom: 1px solid #dcdcdc
+        }
+
+        .list-button {
+            float: left;
+            margin-top: 13px;
+        }
+
+        .register {
+            float: right;
+            padding-bottom: 7px;
+            margin-top: 9px;
+        }
+
+        .register li {
+            display: inline;
+            list-style: none;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .nav-menu .register button {
+            border: none;
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+
+        }
+
+        .past-main .register button {
+            color: black;
+        }
+
+        .nav-menu .register button:hover {
+            color: orange;
+            border-bottom: 1px solid #df6e21
+        }
+
+        .navbar-menu button {
+            border: none;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+
+        }
+
+        .past-main .register button {
+            color: black
+        }
+
+        .navbar-menu button:hover {
+            color: orange;
+            border-bottom: 1px solid #df6e21
+        }
+
+        .wish-list {
+            border-radius: 50%;
+            border: 2px solid orange;
+            padding: 4px;
+
+            cursor: pointer;
+            color: white;
+        }
+
+        .wish-list {
+            border-radius: 50%;
+            border: 2px solid orange;
+            padding: 4px;
+
+            cursor: pointer;
+            color: white;
+        }
+
+        .wish-list.past-main {
+
+            color: black;
+        }
+
+        .wish-list:hover {
+            background: orange;
+            color: white;
+        }
+
+
+
+        .nav-button {
+
+            background-color: transparent;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid orange;
+            font-size: 15px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            letter-spacing: 1px
+        }
+
+        .nav-button.past-main {
+            color: black;
+
+        }
+
+
+
+
+        .nav-button:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        .banner-text {
+            position: absolute;
+            z-index: 2;
+            top: 210px;
+            left: 330px;
+            text-align: center;
+            font-size: 42px;
+            color: white;
+            padding-bottom: 30px;
+        }
+
+
+
+
+
+        .category-btn {
+            position: absolute;
+            z-index: 2;
+            top: 280px;
+            left: 450px;
+        }
+
+        .list-btn {
+            background-color: orange;
+            color: white;
+            font-size: 16px;
+            padding: 12px 42px;
+            border: none;
+
+        }
+
+        .list-btn:hover {
+            background-color: white;
+            color: black;
+
+        }
+
+
+        .icon-bar {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 100px;
+            padding: 30px;
+        }
+
+        .icon-bar .each-icon {
+            display: inline-block;
+            text-align: center;
+        }
+
+        hr {
+            border-color: #dcdcdc;
+            border-style: solid;
+            margin: 30px;
+
+
+
+        }
+
+        /****************************************************************************/
+
+        .first-section {
+            background-color: transparent;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 50px;
+            padding: 30px;
+        }
+
+
+        .first-section .first-block {
+            display: inline-block;
+            height: 300px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 0px 0px;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px 0px #D6D6D6;
+
+        }
+
+        .first-section .first-block img {
+            width: 300px;
+            height: 300px;
+            opacity: 0.9;
+            transition: 200ms;
+            transition-timing-function: ease-out;
+        }
+
+        .first-section .first-block .content {
+            height: 300px;
+            width: 300px;
+            text-align: right;
+            z-index: 2;
+            position: absolute;
+            transition: 200ms;
+            transition-timing-function: ease-out;
+            float: left;
+            box-shadow: inset 0 0 0 15px #ffffff;
+
+
+        }
+
+        .first-section .first-block .block-info {
+            float: right;
+            width: 320px;
+
+
+        }
+
+        .first-section .first-block .block-title {
+            width: 65px;
+            background: orange;
+            display: block;
+            font-size: 1em;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+
+        }
+
+        .first-section .first-block .content .F {
+            display: inline-block;
+            font-size: 1.3em;
+            font-weight: 900;
+            color: black;
+            z-index: 2;
+        }
+
+        .first-section .first-block .content .block-subtitle {
+            /*NEW ARRIVALS*/
+            display: none;
+            height: 15%;
+            width: 95%;
+            margin-top: 3%;
+            transform: translate3d(10px, 0, 0);
+            transition: 200ms;
+            transition-timing-function: ease-out;
+            letter-spacing: 6px;
+            color: blue;
+            line-height: 2em;
+            font-size: 1.1em;
+        }
+
+        .first-section .first-block:hover .block-subtitle {
+            display: block;
+            transform: translate3d(0px, 0, 0);
+        }
+
+        .first-section .first-block:hover .content {
+            transform: translate3d(0px, 0, 0);
+            box-shadow: none;
+        }
+
+        .first-section .first-block:hover img {
+            opacity: 0.8;
+            filter: sepia(50%);
+
+        }
+
+        /**********************************************************************************/
+
+        .fifth-section {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+
+
+        .fifth-section .products {
+            display: inline-block;
+            width: 300px;
+            box-shadow: 0px 0px 15px 0px #D6D6D6;
+            padding: 1% 1%;
+            margin: 2% 3%;
+
+        }
+
+        .fifth-section .product-image {
+            height: 55%;
+            margin: 6%;
+            padding: 0% 0%;
+            transition: 300ms linear;
+            position: relative;
+        }
+
+        .fifth-section .product-image img {
+            width: 260px;
+            height: 250px;
+        }
+
+        .fifth-section .product-shop {
+            height: 45%;
+            padding-top: 2%;
+            padding-bottom: 3%;
+        }
+
+        .fifth-section .product-shop h1 {
+            color: #df6e21;
+            font-size: 1em;
+            margin-top: 3%;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .fifth-section .product-shop h2 {
+            font-size: 1.2em;
+            font-weight: bolder;
+            margin-top: 7px;
+            margin-bottom: 3px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .fifth-section .product-shop del {
+            margin-left: 15%;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            color: #908e8e;
+        }
+
+        .product-shop a:hover {
+            color: #2096ba;
+        }
+
+        .carousel-button {
+            padding: 0px 0px;
+            border-style: none;
+            height: 40px;
+            width: 75%;
+            margin-left: 12.5%;
+        }
+
+        .carousel-button {
+            background-color: #2096ba;
+            padding: 0px 0px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-top: 0.8em;
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            z-index: 2;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        .carousel-button::before {
+            content: '';
+            position: absolute;
+            border: #2096ba solid 4px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: 0.2s ease-out;
+            transition-property: top, right, bottom, left;
+        }
+
+        .carousel-button a {
+            text-decoration: none;
+            color: white;
+            height: 30px;
+        }
+
+        .carousel-button:hover::before {
+            top: -8px;
+            bottom: -8px;
+            left: -8px;
+            right: -8px;
+        }
+
+        .fifth-section .product-image:hover {
+            transform: scaleX(1.1) scaleY(1.1);
+            box-shadow: 0px 0px 15px 0px #D6D6D6;
+            filter: sepia(50%)
+        }
+
+        .fifth-section .product-image:hover button {
+            display: block;
+            height: 40px;
+            width: 60%;
+            top: 40%;
+            left: 18%;
+            position: absolute;
+            background: #2096ba;
+            transition: 0.4s ease-out;
+        }
+
+        .fifth-section .product-image button {
+
+            border-style: none;
+            display: none;
+        }
+
+        .fifth-section .product-image a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .fifth-section .tab-pane {
+            height: 100%;
+        }
+
+        .fifth-section .tab-content {
+            height: 90%;
+            background-color: white;
+            margin-top: 1%;
+        }
+
+        .fifth-section-mobile-view {
+            display: none;
+        }
+
+
+        .footer-wrapper li {
+
+            text-decoration: none;
+            display: inline;
+            padding: 0px 80px;
+        }
+
+        .first-block a {
+            color: black
+        }
+
+        a {
+            text-decoration: none
+        }
+
+
+        .detail {
+            line-height: 1.5;
+        }
+
+        .db-product {
+            color: black
+        }
+
+        .clearfix:after {
+            content: " ";
+            /* Older browser do not support empty content */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+
+    <!--  <link rel="stylesheet" href="./css/all.css">
+
+
+    <script src="./js/jquery.js"></script>
+
+    <script src="./js/bootstrap.js"></script>
+ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="header-wrapper">
+            <nav class="nav-wrapper clearfix">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="./images/logo.png" style="height: 37px; width: 100px">
+
+                    </div>
+
+                    <ul class="nav-menu">
+                        <button class="btn nav-button" onclick="location.href='diyproducts'"> Browse DIY Deals</button>&nbsp;&nbsp;&nbsp;
+                        <button class="btn nav-button" onclick="location.href='material'"> Sell on Yesari</button>&nbsp;&nbsp;&nbsp;
+
+
+                    </ul>
+
+
+                </div>
+                <div class="nav-menu">
+
+                    <ul class="register">
+
+                        <li>
+                            <span class="wish-list fas fa-shopping-cart" onclick="location.href='cart'"></span>
+                            </a>
+                        </li>
+
+                        <% if(!user) { %>
+                            <li>
+                                <button onclick="location.href='signup'">Register</button>
+                            </li>
+                            <li>
+                                <button onclick="location.href='login'">Login</button>
+                            </li>
+
+
+                            <% }else{ %>
+                                <li>
+                                    <button>
+                                        <%= user.username %>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onclick="location.href='signout'">
+                                        Logout </button>
+                                </li>
+                                <%}%>
+
+
+                    </ul>
+                    <!-- <div class="register">Register</div>
+        <div class="login">Login  </div> -->
+                </div>
+            </nav>
+
+            <div class="banner-text">
+
+                Creativity, Passion,
+                <span style="color: orange;"> Handmade, Market</span>
+            </div>
+            <!-- <div class="category-btn">
+
+                <button class="list-btn rent-room" onclick="location.href='search_home.html'">Rental Spaces</button>
+                <span style="display:inline-block; width: 30px;"></span>
+
+
+
+                <button class="list-btn furnish-room" onclick="location.href='furnituresearch.html'">Furnishing Services</button>
+            </div> -->
+        </div>
+
+        <div class="body-wrapper">
+
+            <div class="icon-bar">
+                <div class="each-icon">
+                    <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39400054_297446074392621_7276916476332736512_n.png?_nc_cat=0&oh=1317cac29a0ad73efafa9bfb69cee407&oe=5BF9E562"
+                        style=" height: 120px; width: 120px; padding: 15px 0px">
+                    <br/>
+                    <strong>Make It</strong>
+                    <br/>
+                    <span style="font-family: 'open-sans', sans-serif; font-size: 14px">Make It Amazing
+                        <br/>
+                    </span>
+                </div>
+                <div class="each-icon">
+                    <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39403406_227250084627394_5759393905183293440_n.png?_nc_cat=0&oh=4ca65cb139571ae683bb89ac9b33c6af&oe=5C008386"
+                        style=" height: 150px; width: 150px">
+                    <br/>
+
+                    <strong>Sell It</strong>
+                    <br/>
+                    <span style="font-family: 'open-sans', sans-serif; font-size: 14px"> A Platform for Selling your Products
+                    </span>
+                </div>
+                <div class="each-icon">
+                    <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39387611_227168781302033_6130548795466842112_n.png?_nc_cat=0&oh=bc50ac0efe0d877274a41b0acf7f3e68&oe=5C0ED859"
+                        style=" height: 150px; width: 150px">
+                    <br/>
+                    <strong>Buy It</strong>
+                    <br/>
+                    <span style="font-family: 'open-sans', sans-serif; font-size: 14px"> Don't Worry, Purchase It</span>
+                </div>
+
+                <!-- <p>TIMELY RENT PAYMENT 
+                    <span style="display:inline-block; width: 150px;"></span>
+
+            YOUR PERFECT SPACE
+                    <span style="display:inline-block; width: 150px;"></span>
+
+            THE RIGHT CARE</p> -->
+
+
+            </div>
+            <hr/>
+
+            <div style="text-align: center;">
+                <h2>
+                    <span style="color: orange">FEATURED </span> LISTS</h2>
+            </div>
+
+            <div class="first-section">
+
+                <div class="first-block clearfix">
+                    <a href="pro">
+                        <div class="content">
+
+                            <div class="block-subtitle">
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <img src="
+                        https://static.zingyhomes.com/projectImages/cache/3b/51/3b51ee16f6ccb38edd619c7e2ebafa1e.jpg" alt="">
+                        <div class="block-info">
+                            <div style="padding-left: 15px; padding-top: 10px">
+
+                                <h4>
+                                    <strong>Home Decor</strong>
+                                </h4>
+                                <br/>
+                                <p>
+
+
+                                    <strong> Total Price: </strong> Rs. 3200 /month
+                                    <br/>
+                                    <br/>
+                                    <p class="detail"> Home decors delights your room with the bloom of...
+                                    </p>
+                                </p>
+                                <br/>
+                            </div>
+
+                            <button class="carousel-button" onclick="location.href = 'pro';">VIEW MORE</button>
+
+
+                        </div>
+                    </a>
+
+
+                </div>
+
+
+                <div class="first-block">
+                    <a href="pro">
+                        <div class="content">
+
+                            <div class="block-subtitle">
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39339936_2055672281109652_2886747411990970368_n.jpg?_nc_cat=0&oh=dc09f9a7d327a19547f2a14e3f425fe2&oe=5BF2FBF4"
+                            alt="">
+                        <div class="block-info">
+                            <div style="padding-left: 15px; padding-top: 10px">
+                                <h4>
+                                    <strong>Tassel Earrings</strong>
+                                </h4>
+                                <br/>
+                                <p>
+
+
+                                    <strong> Total Price: </strong> Rs. 250 /month
+                                    <br/>
+                                    <br/>
+                                    <p class="detail"> Attractive and affordable tassel earrings adding beauty to...
+                                    </p>
+                                </p>
+                                <br/>
+                            </div>
+                            <button class="carousel-button" onclick="location.href = 'pro';">VIEW MORE</button>
+
+                        </div>
+                    </a>
+
+                </div>
+                <div class="first-block">
+                    <a href="pro">
+                        <div class="content">
+
+                            <div class="block-subtitle">
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-0/s261x260/39441315_1002039633289835_8910993082527252480_n.jpg?_nc_cat=0&oh=d5f49ffdc8d5a63afdf10f11a99fda5d&oe=5C0D135D"
+                            alt="">
+                        <div class="block-info">
+                            <div style="padding-left: 15px; padding-top: 10px">
+
+                                <h4>
+                                    <strong>Decorative Candles</strong>
+                                </h4>
+                                <br/>
+                                <p>
+
+
+                                    <strong> Total Price: </strong> Rs. 2000 /month
+                                    <br/>
+                                    <br/>
+                                    <p class="detail"> Beautiful, attractive and handmade candles just for...
+                                    </p>
+                                </p>
+                                <br/>
+                            </div>
+                            <button class="carousel-button" onclick="location.href = 'pro';">VIEW MORE</button>
+
+                        </div>
+                    </a>
+
+                </div>
+                <div class="first-block">
+                    <a href="pro">
+                        <div class="content">
+
+                            <div class="block-subtitle">
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.15752-9/39396376_2113405262209384_5749650655908200448_n.jpg?_nc_cat=0&oh=e2010fff1bb40d3209b1307ae8a631d0&oe=5BF99D8C"
+                            alt="">
+                        <div class="block-info">
+                            <div style="padding-left: 15px; padding-top: 10px">
+
+                                <h4>
+                                    <strong>Greeting Cards</strong>
+                                </h4>
+                                <br/>
+                                <p>
+
+
+                                    <strong> Total Price: </strong> Rs. 200 /month
+                                    <br/>
+                                    <br/>
+                                    <p class="detail"> Cards are the way to express the affection and care for...
+                                    </p>
+                                </p>
+                                <br/>
+                            </div>
+                            <button class="carousel-button" onclick="location.href = 'pro';">VIEW MORE</button>
+
+                        </div>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+            <hr/>
+
+            <div style="text-align: center; padding-bottom: 10px">
+                <h2>DIYs
+                    <span style="color: orange">AVAILABLE </span>
+                </h2>
+            </div>
+
+            <% if(products && products.length > 0) { %>
+
+
+                <div class="fifth-section">
+                    <% var i = 0; products.forEach(function(product) { i++; %>
+
+
+
+                        <div class="tab-pane">
+                            <div class="products row ">
+                                <div class="product-image">
+
+                                    <!-- <button>
+                                <a href="product.html">VIEW MORE</a>
+                            </button> -->
+
+
+                                    <img src="/images/<%=product.myimage%>">
+
+                                </div>
+
+
+
+                                <div class="product-shop ">
+                                    <h1>
+                                        <%= product.name %>
+                                    </h1>
+                                    <h4 style="text-align: center; padding: 10px; text-transform: capitalize">
+
+                                        <%= product.productType %>
+                                    </h4>
+                                    <h2>Rs.
+                                        <%= product.price %>
+                                    </h2>
+                                    <br/>
+
+                                    <!-- <button class="carousel-button" onclick="location.href = 'product/<%= product._id %>';">
+                                        VIEW MORE
+                                    </button> -->
+
+                                    <span style="padding-left: 50px;" />
+                                    <a href="product/<%= product._id %>" class="db-product" style="color: white; background: #2096ba; padding: 8px; ">View More</a>
+
+
+                                    <a href="/add-to-cart/<%= product._id %>" class="db-product" style="color: white; background: #2096ba; padding: 8px; ">Add to Cart</a>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+
+
+
+                </div>
+                <% } else { %>
+                    <p class="alert alert-info">Sorry, no products to show.</p>
+                    <% } %>
+                        <br/>
+                        <br/>
+
+        </div>
+
+
+        <div class="footer-wrapper" style="background: #111111; height: 100px; text-align: center; color: white; padding: 20px">
+            The Hipsters Ⓒ 2018
+            <br/>
+            <br/>
+            <li>
+
+                About Us </li>
+
+            <li>Terms Of Use</li>
+
+
+            <li>Privacy Policies</li>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        var a = document.getElementsByClassName('navbar-menu')
+
+        $(window).on('scroll', function () {
+
+            // we round here to reduce a little workload
+            stop = Math.round($(window).scrollTop());
+            if (stop > 150) {
+                $('.nav-wrapper').addClass('past-main');
+                $('.nav-button').addClass('past-main');
+                // $('.navbar-menu').addClass('past-main');
+                $('.nav-menu').addClass('past-main');
+                $('.wish-list').addClass('past-main');
+
+            } else {
+
+                $('.nav-wrapper').removeClass('past-main');
+                $('.nav-button').removeClass('past-main');
+                // $('.navbar-menu').removeClass('past-main');
+                $('.nav-menu').removeClass('past-main');
+                $('.wish-list').removeClass('past-main');
+
+            }
+            // if (stop > 150) {
+            //     a[0].style.display = 'block'
+
+            // } else {
+            //     a[0].style.display = 'none'
+
+            // }
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

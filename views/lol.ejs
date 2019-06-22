@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+<!-- Add this link in your page  -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/bootstrap-tagsinput.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<body>
+<!--<script src="bootstrap-tagsinput.min.js"></script>-->
+
+<form id="bootstrapTagsInputForm" class="form-horizontal" method="post" action="/tagseg">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Cities</label>
+        <div class="col-xs-8">
+            <input type="text" name="Name" class="form-control"
+                   value="Hanoi" data-role="tagsinput" style="width: 100%" />
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="col-xs-3 control-label">Countries</label>
+        <div class="col-xs-8">
+            <input type="text" name="countries" class="form-control"
+                   value="Vietnam" data-role="tagsinput" />
+        </div>
+    </div> -->
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form></body>
+<script type="text/javascript" src="/javascripts/bootstrap-tagsinput.js">
+  // bootstrap-tagsinput.js file - add in local
+
+
+</script>
+</head>

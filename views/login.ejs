@@ -1,0 +1,279 @@
+<html>
+
+<head>
+  <title>
+    Login
+  </title>
+  <link rel='stylesheet' href="/stylesheets/style1.css" />
+
+  <style>
+    html * {
+      font-family: 'Open Sans', sans-serif
+    }
+
+    /**************************************/
+
+    .nav-wrapper {
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      background-color: white;
+      color: #fff;
+      transition: all 0.25s ease;
+      position: fixed;
+      z-index: 10;
+      padding-top: 3px;
+      border-bottom: 1px solid #a89f9ffa
+      /* make sure to add vendor prefixes here */
+    }
+
+    .logo {
+      padding-top: 5px;
+      float: left;
+    }
+
+    .logo-img {
+      float: left;
+    }
+
+    .navbar-menu {
+      float: right;
+      color: orange;
+      display: block;
+      margin-top: 5px;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 1px;
+
+    }
+
+    .navbar-menu button {
+      border: 2px solid orange;
+    }
+
+    .nav-menu {
+      float: right;
+      margin-bottom: 5px;
+    }
+
+    .nav-wrapper.past-main {
+      background-color: #fff;
+      color: black;
+      position: fixed;
+      border-bottom: 1px solid #dcdcdc
+    }
+
+    .list-button {
+      float: left;
+      margin-top: 13px;
+    }
+
+    .register {
+      float: right;
+      padding-bottom: 7px;
+      margin-top: 9px;
+    }
+
+    .register li {
+      display: inline;
+      list-style: none;
+      padding-right: 20px;
+      color: orange;
+    }
+
+    .nav-menu .register button {
+      border: none;
+      background-color: transparent;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      font-size: 18px;
+
+    }
+
+    .nav-menu .register button:hover {
+      color: orange;
+      border-bottom: 1px solid #df6e21
+    }
+
+    .navbar-menu button {
+      border: none;
+      background-color: transparent;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      font-size: 18px;
+
+    }
+
+    .navbar-menu button:hover {
+      color: orange;
+      border-bottom: 1px solid #df6e21
+    }
+
+    .wish-list {
+      border-radius: 50%;
+      border: 2px solid orange;
+      padding: 4px;
+
+      cursor: pointer;
+      color: black;
+    }
+
+    .wish-list:hover {
+      background: orange;
+      color: white;
+    }
+
+
+
+    .nav-button {
+
+      background-color: transparent;
+      border: none;
+      color: black;
+      padding: 6px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border: 2px solid orange;
+      font-size: 15px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      letter-spacing: 1px;
+
+    }
+
+
+
+
+
+    .nav-button:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    .clearfix:after {
+      content: " ";
+      /* Older browser do not support empty content */
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+
+  <!--  <link rel="stylesheet" href="./css/all.css">
+
+
+<script src="./js/jquery.js"></script>
+
+<script src="./js/bootstrap.js"></script>
+-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <nav class="nav-wrapper clearfix">
+    <div class="logo">
+      <div class="logo-img">
+        <img src="./images/logo.png" style="height: 37px; width: 100px">
+
+      </div>
+
+      <button class="btn nav-button" onclick="location.href='browse'" style="margin-left: 20px"> Browse DIY Deals</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn nav-button" onclick="location.href='material'"> Sell on Yesari</button>&nbsp;&nbsp;&nbsp;
+
+
+
+
+    </div>
+    <div class="nav-menu">
+
+      <ul class="register">
+
+        <li>
+          <span class="wish-list fas fa-shopping-cart" onclick="location.href='cart'"></span>
+          </a>
+        </li>
+
+        <li>
+          <button onclick="location.href='signup'">Register</button>
+        </li>
+        <li>
+          <button onclick="location.href='login'">Login</button>
+        </li>
+
+
+
+
+
+      </ul>
+      <!-- <div class="register">Register</div>
+  <div class="login">Login  </div> -->
+    </div>
+  </nav>
+
+
+
+  <div class="modal-content" style="padding-top: 60px;">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <center>
+        <h2 style="color: #DF6E21;"> LOGIN</h2>
+      </center>
+    </div>
+    <div class="modal-body">
+      <form class="form-signin" action="/login" method="POST">
+        <input type="text" name="username" class='form-control' placeholder="username" required="" autofocus="">
+        <input type="password" name="password" class='form-control' placeholder="password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" style="background: #df6e21; border: #df6e21"> Sign In</button>
+
+        <a href="/signup">Create an account</a>
+        <div id="message">
+          <% if (message) {%>
+
+            <%=message%>
+
+              <%}%>
+
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+
+      <p>Not a member?
+        <a href="/signup"> Register</a>
+      </p>
+      <p>
+        <a href="#">Forgot Password</a>
+      </p>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+</body>
+</head>
+
+</html>

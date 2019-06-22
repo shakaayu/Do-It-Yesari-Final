@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style type="text/css">
+	img{
+		width: 100px;
+		height: 100px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2>Add Data</h2>
+			
+
+			<form method="post" enctype="multipart/form-data" action="/lol">
+				<div class="form-group row" >
+					<div class="col-md-1" style="float: left;">
+						<label for="title" class="col-sm-2 col-form-label" >Title</label>
+					</div>
+					<div class="col-sm-3" style="float: left;">
+						<input type="text" name="title" placeholder="title" class="form-control">
+					</div>
+				</div>
+
+
+				 
+				<!-- <div class="form-group row" >
+					<div class="col-lg-2" style="float: left;">
+						<input type="file" name="upl2" class="form-control-file" onchange="previewFile()">
+
+						<img src="" height="200" >
+
+					</div>
+				</div> -->
+				<div class="form-group row" >
+					<div class="col-lg-2" style="float: left;">
+						<input type="file" name="upl" class="form-control-file" value="Upload" multiple onchange="previewFiles()">
+						<div class="row" style="align-content: center;">
+							<div id="preview"></div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="form-group row" >
+					<div class="col-lg-2" style="float: left;">
+						<input type="file" name="upl1" class="form-control-file">
+					</div>
+				</div>  -->
+				<div class="form-group row" >
+					<div class="col-lg-2" style="float: left;">
+						<input type="submit" class="btn btn-primary">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<% for (var i = 0; i < data.length; i++) { %>
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<div class="caption">
+						<h3><%= data[i].Name %></h3>
+						<!-- <h3><%= data[i]._id %></h3> -->
+						<img src="/uploads/<%= data[i].image1 %>" class = "img-thumbnail">
+						<img src="/uploads/<%= data[i].image2 %>" class = "img-thumbnail">
+						<img src="/uploads/<%= data[i].image3 %>" class = "img-thumbnail">
+
+						<form method="post" action="/lol/delete">
+							<input id="prodId" name="prodId" type="hidden" value="<%= data[i]._id %>">
+							<input type="submit"  class = "btn btn-danger" name="Delete" value="Delete">
+						</form>
+					</div>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+	
+</body>
+<script>
+function previewFiles() {
+
+  var preview = document.querySelector('#preview');
+  var files   = document.querySelector('input[type=file]').files;
+
+  function readAndPreview(file) {
+
+    // Make sure `file.name` matches our extensions criteria
+    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        var image = new Image();
+        image.height = 100;
+        image.title = file.name;
+        image.src = this.result;
+        preview.appendChild( image );
+      }, false);
+
+      reader.readAsDataURL(file);
+    }
+
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+
+}
+	</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search Listings</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h2>Stylish Search Box</h2>
+      <form action="/xhr" method="GET" class="form-inline">
+        <div class="form-group">
+          <input type="text" name="search" onkeyup="showResults(this.value)" class="form-control">
+          <input type="submit" value="search" class="btn-primary">
+        </div>
+        <div id='search-results'>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  var showResults = debounce(function (arg) {
+    var value = arg.trim();
+    if (value == "" || value.length <= 0) {
+      $("#search-results").fadeOut();
+      return;
+    }
+    else {
+      $('#search-results').fadeIn();
+    };
+    var jqxhr = $.get('/xhr/search?q=' + value, function (data) {
+      console.log('lolololo');
+      $('#search-results').html("");
+    })
+      .done(function (data) {
+        if (data.length === 0) {
+          $('#search-results').append('<p>No Results</p>');
+
+        }
+        else {
+          data.forEach(x => {
+            $('#search-results').append('<p>' + x.name + '</p>');
+          });
+        }
+      })
+      .fail(function (err) {
+        console.log('fail', err);
+      })
+
+
+  }, 200);
+
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+</script>
+
+</html>

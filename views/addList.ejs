@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Listings</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/stylesheets/bootstrap-tagsinput.css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style type="text/css">
+  .form-group.required .control-label:after { 
+   content:"*";
+   color:red;
+}
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+.files{ position:relative;
+   }
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.color input{ background-color:#f1f1f1;}
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+  <h3 style="text-align: center;"><strong>Add Your Listing</strong></h3>
+ <div class="col col-md-2"></div>
+    <div class="col col-md-8">
+  <form>
+  <div class="form-group required">
+    <label for="exampleInputEmail1" class='control-label'>Title</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Give the name of your item.">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  
+  <div class="form-group required">
+    <label for="exampleSelect1" class='control-label'>Category</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>Accessories</option>
+      <option>Home Decor</option>
+      <option>Clothing</option>
+       <option>Art and Craft</option>
+    </select>
+  </div>
+    
+  <div class="form-group required">
+    <label for="exampleTextarea" class='control-label'>Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Give a brief overview to describe your product"></textarea>
+  </div>
+  <div class="form-group required">
+    <label for="exampleSelect1" class='control-label'>Price</label>
+    <input type="number" class="form-control" id="Price" placeholder="Rs.">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class='control-label'>Colors (Optional)</label>
+    <input type="text" name="Name" class="form-control"
+                  data-role="tagsinput" />
+  </div>
+  <div class="form-group required">
+    <label for="exampleInputEmail1" class='control-label'>Delivary Days</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Specify no. of days required to deliver the item.">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  
+  
+   
+   
+  <!-- <hr size = "30" style="height:2px;border:none;color:#d3d3d3;background-color:#d3d3d3"> -->
+ 
+ 
+   <div class="form-group">
+    <label for="exampleInputPassword1" class='control-label'>Tags (Optional)</label>
+    <input type="text" name="Name" class="form-control"
+     placeholder="To make search easier" data-role="tagsinput" />
+  </div>
+  
+         
+ <div class="form-group files color">
+      <label>Photo (Upload 3 photos preferably in different angle against clean background.)* </label>
+      <input type="file" name="upl" class="form-control-file" value="Upload" multiple onchange="previewFiles()"></div>
+      <div class="row" style="align-content: center;">
+              <div id="preview" style="padding-left:15em"></div>
+            </div>
+    
+  <br><br>
+    <ul class="media-date text-uppercase reviews list-inline">
+    <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li>
+    <li class="aaaa"><button type="submit" class="btn btn-warning">Submit</button></li>
+  </ul>
+</form>
+</div>
+  <div class="col col-md-2"></div>
+
+</div>
+</div>
+</body>
+<script type="text/javascript">function previewFiles() {
+
+  var preview = document.querySelector('#preview');
+  var files   = document.querySelector('input[type=file]').files;
+
+  function readAndPreview(file) {
+
+    // Make sure `file.name` matches our extensions criteria
+    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        var image = new Image();
+        image.height = 100;
+        image.title = file.name;
+        image.src = this.result;
+        preview.appendChild( image );
+      }, false);
+
+      reader.readAsDataURL(file);
+    }
+
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+
+}
+  </script>
+  <script type="text/javascript" src="/javascripts/bootstrap-tagsinput.js"></script>

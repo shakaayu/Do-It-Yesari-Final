@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <!--  <% if (!user) { %>
+     
+    <a href="/login"> Login</a>
+    <br>
+    <a href="/register"> Register </a>
+    <% } %> 
+    <% if (user) { %> -->
+  <p> You are currently logged in as
+    <%= user.username %>
+      <%= user.email %>
+        <%= user.firstname %>
+
+          <a href="/signout"> Logout </a>
+          <% } %>
+
+
+
+
+            <!-- <form method = "post" action = "/editProfile/edit/<%=user._id %>" enctype="multipart/form-data"> -->
+            <!-- <form method = "post" action = "/profilePic/upload" enctype="multipart/form-data"> -->
+
+            <!-- <div class = "form-group-row">
+   <input class="form-control" type="hidden" name = "_id" value="<%= user.id %>" id="example-id">
+   </div>
+
+    
+   <div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">First Name</label>
+  <div class="col-10">
+    <input class="form-control" type="text" name = "firstName" value="<%= user.firstName %> " id=example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Last Name</label>
+  <div class="col-10">
+    <input class="form-control" type="text" name = "lastName" value="<%= user.lastName %>" id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-email-input" class="col-2 col-form-label">Contact no</label>
+  <div class="col-10">
+    <input class="form-control" type="tel" value="<%= user.contact %>" name = "contact" id="example-email-input">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-tel-input" class="col-2 col-form-label">Address (CITY)</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="<%= user.address %>" name = "address" id="example-tel-input">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-number-input" class="col-2 col-form-label">Town</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="<%= user.town %>" name = "town" id="example-number-input">
+  </div>
+</div>
+<div class="form-group">
+    <label for="myProfile" class="sr-only">File</label>
+    <input type="file" name="myProfile" id="myProfile" class="form-control" placeholder="File">
+</div>
+<input type="submit" id="btn-login" class="btn btn-custom btn-sm btn-block" value="Upload">
+
+<button class="btn btn-primary">Update</button>
+<a class="btn btn-danger" href="/editProfile/delete/<%=user._id %>">Delete</a>
+</form>
+ -->
+            <!-- <div class="file-field input-field">
+        <div class="btn grey">
+          <span>File</span>
+          <input name="myProfile" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <br>
+    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+  </div>      -->
+
+
+</body>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</html>
